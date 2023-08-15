@@ -1,13 +1,11 @@
 package com.liamxsage.sagelauncher
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,19 +20,27 @@ import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import com.liamxsage.sagelauncher.components.AnimatedBackgroundImage
 import com.liamxsage.sagelauncher.components.AppWindowTitleBar
+import com.liamxsage.sagelauncher.components.Pack
 import com.liamxsage.sagelauncher.components.PackList
-import kotlin.system.exitProcess
 
 @Composable
 @Preview
 fun App() {
-    val images = listOf(
-        painterResource("assets/bg/bg1.png"),
-        painterResource("assets/bg/bg2.png"),
-        painterResource("assets/bg/bg3.png"),
-        painterResource("assets/bg/bg4.png"),
-        painterResource("assets/bg/bg5.png"),
+    val imageResources = listOf(
+        "assets/bg/bg1.png",
+        "assets/bg/bg2.png",
+        "assets/bg/bg3.png",
+        "assets/bg/bg4.png",
+        "assets/bg/bg5.png"
     )
+    val packs = listOf(
+        Pack(1, Color(50, 255, 126, 200)),
+        Pack(2, Color(24, 220, 255, 200)),
+        Pack(3, Color(255, 204, 204, 200))
+    )
+
+    val images = imageResources.map { painterResource(it) }
+
     MaterialTheme {
         Surface(
             modifier = Modifier.fillMaxSize().padding(5.dp).shadow(3.dp, RoundedCornerShape(20.dp)),
@@ -43,7 +49,8 @@ fun App() {
         ) {
             AnimatedBackgroundImage(images)
 
-            PackList()
+
+            PackList(packs)
         }
     }
 }

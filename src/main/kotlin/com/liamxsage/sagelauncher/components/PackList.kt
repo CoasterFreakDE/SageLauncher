@@ -6,18 +6,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
+data class Pack(val id: Int, val color: Color)
+
 @Composable
-fun PackList() {
+fun PackList(packs: List<Pack>) {
     Box(
         Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
         Row (Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-
-            PackDisplay(1, color = Color(50, 255, 126, 200))
-            PackDisplay(2, color = Color(24, 220, 255, 200))
-            PackDisplay(3, color = Color(255, 204, 204, 200))
-
+            packs.forEach { pack ->
+                PackDisplay(pack.id, color = pack.color)
+            }
         }
     }
 }
