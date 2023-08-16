@@ -4,19 +4,18 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import com.liamxsage.sagelauncher.settings.data.PackSettings
 
-data class Pack(val id: Int, val color: Color)
 
 @Composable
-fun PackList(packs: List<Pack>) {
+fun PackList(packs: List<PackSettings>) {
     Box(
         Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
         Row (Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
             packs.forEach { pack ->
-                PackDisplay(pack.id, color = pack.color)
+                PackDisplay(pack)
             }
         }
     }

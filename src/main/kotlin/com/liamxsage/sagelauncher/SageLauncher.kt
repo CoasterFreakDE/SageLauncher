@@ -20,8 +20,8 @@ import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import com.liamxsage.sagelauncher.components.AnimatedBackgroundImage
 import com.liamxsage.sagelauncher.components.AppWindowTitleBar
-import com.liamxsage.sagelauncher.components.Pack
 import com.liamxsage.sagelauncher.components.PackList
+import com.liamxsage.sagelauncher.settings.SettingsManager
 
 @Composable
 @Preview
@@ -33,11 +33,7 @@ fun App() {
         "assets/bg/bg4.png",
         "assets/bg/bg5.png"
     )
-    val packs = listOf(
-        Pack(1, Color(50, 255, 126, 200)),
-        Pack(2, Color(24, 220, 255, 200)),
-        Pack(3, Color(255, 204, 204, 200))
-    )
+    val packs = SettingsManager.settings?.packSettings ?: emptyList()
 
     val images = imageResources.map { painterResource(it) }
 
@@ -49,13 +45,16 @@ fun App() {
         ) {
             AnimatedBackgroundImage(images)
 
-
             PackList(packs)
         }
     }
 }
 
 fun main() = application {
+
+    // Startup Logic
+    SettingsManager.loadSettings()
+
     val state = rememberWindowState(
         position = WindowPosition(Alignment.Center), size = DpSize(1280.dp, 768.dp)
     )
