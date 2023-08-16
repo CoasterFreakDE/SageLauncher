@@ -21,6 +21,8 @@ dependencies {
     // With compose.desktop.common you will also lose @Preview functionality
     implementation(compose.desktop.currentOs)
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation("net.harawata:appdirs:1.2.1")
+
 }
 
 compose.desktop {

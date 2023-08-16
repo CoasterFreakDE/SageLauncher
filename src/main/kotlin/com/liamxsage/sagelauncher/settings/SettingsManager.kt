@@ -2,6 +2,7 @@ package com.liamxsage.sagelauncher.settings
 
 import com.google.gson.Gson
 import com.liamxsage.sagelauncher.data.Settings
+import net.harawata.appdirs.AppDirsFactory
 import java.io.FileReader
 import java.io.FileWriter
 import java.nio.file.Paths
@@ -11,7 +12,7 @@ import java.nio.file.Paths
  */
 object SettingsManager {
     private val gson = Gson()
-    private val sageDirectory = Paths.get(System.getenv("APPDATA"), ".sage")
+    private val sageDirectory = Paths.get(AppDirsFactory.getInstance().getUserDataDir(".sage", null, "liamxsage"))
     private val settingsFilePath = Paths.get(sageDirectory.toString(), "settings.json").toFile()
 
     var settings: Settings? = null
