@@ -1,4 +1,4 @@
-package com.liamxsage.sagelauncher.settings
+package com.liamxsage.sagelauncher.manager
 
 import com.google.gson.Gson
 import com.liamxsage.sagelauncher.data.Settings
@@ -20,8 +20,9 @@ object SettingsManager {
 
     fun loadSettings() {
         if (sageDirectory.toFile().mkdirs()) {
-            println("Created .sage directory")
+            println("Created .sage directory at ${sageDirectory.toAbsolutePath()}!")
         }
+        println(sageDirectory.toAbsolutePath())
 
         if (!settingsFilePath.exists()) {
             println("Settings file does not exist, creating...")

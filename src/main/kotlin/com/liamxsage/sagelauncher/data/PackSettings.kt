@@ -27,4 +27,13 @@ data class PackSettings(
     val memoryMax: Long = 4096,
     val javaVersion: String = "default",
     val javaArgs: String = "-XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32",
+    val modList: List<String> = listOf(),
+    val versionOverrides: List<VersionOverride> = listOf(),
+    val modListRemoteModpack: String? = null,
+)
+
+data class VersionOverride(
+    val modId: String,
+    val gameVersion: String,
+    val modVersion: String
 )

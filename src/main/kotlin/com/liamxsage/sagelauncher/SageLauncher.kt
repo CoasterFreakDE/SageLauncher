@@ -21,7 +21,7 @@ import androidx.compose.ui.window.rememberWindowState
 import com.liamxsage.sagelauncher.components.AnimatedBackgroundImage
 import com.liamxsage.sagelauncher.components.AppWindowTitleBar
 import com.liamxsage.sagelauncher.components.PackList
-import com.liamxsage.sagelauncher.settings.SettingsManager
+import com.liamxsage.sagelauncher.manager.SettingsManager
 
 @Composable
 @Preview
