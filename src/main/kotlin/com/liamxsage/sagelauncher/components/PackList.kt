@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.liamxsage.sagelauncher.settings.data.PackSettings
+import com.liamxsage.sagelauncher.data.PackSettings
 
 
 @Composable

@@ -1,7 +1,7 @@
 package com.liamxsage.sagelauncher.settings
 
 import com.google.gson.Gson
-import com.liamxsage.sagelauncher.settings.data.Settings
+import com.liamxsage.sagelauncher.data.Settings
 import java.io.FileReader
 import java.io.FileWriter
 import java.nio.file.Paths

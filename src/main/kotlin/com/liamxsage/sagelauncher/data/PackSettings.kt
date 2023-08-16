@@ -1,4 +1,4 @@
-package com.liamxsage.sagelauncher.settings.data
+package com.liamxsage.sagelauncher.data
 
 import androidx.compose.ui.graphics.Color
 

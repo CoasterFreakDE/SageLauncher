@@ -12,7 +12,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.liamxsage.sagelauncher.settings.data.PackSettings
+import com.liamxsage.sagelauncher.data.PackSettings
 
 @Composable
 fun RowScope.PackDisplay(
